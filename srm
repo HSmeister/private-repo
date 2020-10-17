@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if cd ~/RECYCLE
+ then
+   echo 'Корзина существует'
+ else 
+   mkdir ~/RECYCLE
+   echo 'Корзина создана'
+fi
