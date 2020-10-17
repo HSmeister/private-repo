@@ -1,9 +1,12 @@
 #!/bin/bash
-
-if cd ~/RECYCLE
- then
-   echo 'Корзина существует'
- else 
-   mkdir ~/RECYCLE
-   echo 'Корзина создана'
+if [ -e $1 ]
+then
+ gzip $1
+ if cd ~/RECYCLE
+  then
+    echo 'Корзина существует'
+  else 
+    mkdir ~/RECYCLE
+    echo 'Корзина создана'
+ fi
 fi
