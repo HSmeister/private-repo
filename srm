@@ -1,12 +1,17 @@
 #!/bin/bash
 if [ -e $1 ]
 then
- gzip $1
+ gzip "$1"
  if cd ~/RECYCLE
   then
-    echo 'Корзина существует'
+    mv "$1.gz" ~/RECYCLE
+    echo "Файл отправлен в корзину и будет храниться в ней не менее 7-ми дней"
   else 
     mkdir ~/RECYCLE
-    echo 'Корзина создана'
+    echo "Создана корзина"
+    mv "$1.gz" ~/RECYCLE
+    echo "Файл отправлен в корзину и будет храниться в ней не менее 7-ми дней"
  fi
+ find ~/RECYCLE -mtime +7 -delete
 fi
+
