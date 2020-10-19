@@ -1,0 +1,8 @@
+#!/bin/bash
+
+mkdir -p ~/bin
+echo 'export PATH="${PATH}:~/bin"' >> ~/.bash_profile
+chmod +x ./srm
+mv ./srm ~/bin
+echo "Установка завершена! Удаляйте файлы с удовольствием!:)"
+
